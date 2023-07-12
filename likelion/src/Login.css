@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.back{
+    width: max-content;
+    height: max-content;
+    background-color: #18a0fb;
+}
+.background {
+    background-color: white;
+    height: auto;
+    width: 1000px;
+    max-width: 450px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 140px;
+}
+
+.form {
+    background-color: white;
+    display: flex;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 10%;
+  
+    flex-direction: column;
+}
+
+
+.login {
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    font-weight: 700;
+    transition: .2s;
+    width: 75%;
+}
+
+.btn {
+    border: none;
+    width: 78%;
+    background-color: #18a0fb;
+    color: white;
+    padding: 15px 0;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+.btn:hover {
+    background-color: rgba(62, 62, 62, 0.8);
+  }
+
+.sign{
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: -0.23px;
+    color: rgba(62, 62, 62, 0.8);
+}
