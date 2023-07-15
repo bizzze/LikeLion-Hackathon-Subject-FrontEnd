@@ -1,0 +1,95 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.evaluate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 800px;
+}
+
+.form_margin {
+  margin-top: 50px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  width: 100%;
+  margin: 20px;
+}
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 5px 5px 0px 0px;
+}
+.title {
+  width: 98%;
+  box-sizing: border-box;
+  resize: both;
+  border-radius: 8px;
+  padding: 11px 0px 3px 10px;
+}
+.content {
+  margin: 10px;
+  width: 100%;
+  height: 200px;
+  box-sizing: border-box;
+  resize: both;
+  border-radius: 15px;
+  padding: 8px;
+}
+
+.evaluate::placeholder {
+  font-size: large;
+  font-weight: bold;
+}
+
+.star_box {
+  width: 99%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.star_box p {
+  font-weight: bolder;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+label {
+  font-weight: bolder;
+}
+
+.sl-style {
+  width: 90%;
+  font-weight: bolder;
+  border-radius: 7px;
+  height: 30px;
+}
+
+.input_style {
+  border-radius: 6px;
+}
+
+.button {
+  margin: 10px;
+}
+.evaluate_button {
+  background-color: #18a0fb; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 20px;
+  font-weight: 600;
+  border-radius: 15px;
+  cursor: pointer;
+}
