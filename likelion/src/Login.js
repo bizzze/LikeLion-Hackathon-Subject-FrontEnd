@@ -8,7 +8,7 @@ function LoginPage(props) {
   return (
     <div className="form">
         <div className='back'></div>
-        <h2>User Login</h2>
+        <h2>로그인</h2>
         <p>
           <input
             className="login"
