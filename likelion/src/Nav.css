@@ -1,30 +1,31 @@
-.navBar{
-    height: 100px;
-    background-color:white;
-    padding-top: 30px;
-    text-align: left;
+.navBar {
+  height: 100px;
+  background-color: white;
+  padding-top: 30px;
+  text-align: left;
 }
 /*Like Lion*/
 .navbarMenu1 {
-    color:black;
-    margin:70px;
-    font-size: 45px;
-    font-weight: bolder;
-    text-decoration: none;
+  color: black;
+  margin: 70px;
+  font-size: 45px;
+  font-weight: bolder;
+  text-decoration: none;
 }
 /*수업평가*/
 .navbarMenu2 {
-    color:black;
-    margin:70px;
-    font-size: 28px;
-    text-decoration: none;
+  color: black;
+  margin: 70px;
+  font-size: 28px;
+  text-decoration: none;
 }
+
 /*마이페이지*/
 .navbarMenu3 {
-    color:black;
-    margin:70px;
-    font-size: 28px;
-    text-decoration: none;
+  color: black;
+  margin: 70px;
+  font-size: 28px;
+  text-decoration: none;
 }
 .loginBtn{
     border: none;
@@ -32,9 +33,9 @@
     height: 45px;
     background-color: #18a0fb;
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
     border-radius: 40px;  
-    transition: .2s;
-    margin-left: 700px;
+    margin-left: 665px;
 }
+
