@@ -123,7 +123,7 @@ const Evaluation = () => {
             <select
               name="score"
               id="score"
-              className="sl-style"
+              className="sl-style_score"
               value={course.credit_score}
             >
               <option value="4.5">A+</option>
@@ -175,6 +175,7 @@ const Evaluation = () => {
           </div>
         </div>
 
+        <div className="write_container">
         <textarea
           className="evaluate title"
           id="evaluate_title"
@@ -192,6 +193,8 @@ const Evaluation = () => {
           value={course.evaluate_content}
           onChange={handleChange}
         ></textarea>
+        </div>
+        
         <div className="star_box">
           <div className="star-rating">{renderStars()}</div>
           <p>{course.rating}/5</p>
