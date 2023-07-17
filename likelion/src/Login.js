@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
-import Nav from './Nav';
+
 
 function LoginPage(props) {
   const [id, setId] = useState('');
@@ -73,7 +73,7 @@ function LoginPage(props) {
 }
 
 function SigninPage(props) {
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
@@ -101,7 +101,7 @@ function SigninPage(props) {
           type="email"
           placeholder="이메일"
           onChange={(event) => {
-            setName(event.target.value);
+            setEmail(event.target.value);
           }}
         />
       </p>
@@ -144,9 +144,11 @@ function SigninPage(props) {
           value="Register"
           onClick={() => {
             const userData = {
-              "userID": id,
-              "userPassword": password,
-              "userEmail": name
+
+              userEmail:email,
+              userID: id,
+              userPassword: password
+
             };
             axios.post('http://localhost:8090/join', userData, {'content-type': 'application/json'})
               .then((res) => {
