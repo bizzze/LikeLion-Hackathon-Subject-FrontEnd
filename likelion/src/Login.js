@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import axios from 'axios';
 import './Login.css';
 import Nav from './Nav';
 
@@ -41,24 +42,18 @@ function LoginPage(props) {
           value="Login"
           onClick={() => {
             const userData = {
-              userId: id,
+              userID: id,
               userPassword: password,
             };
-            fetch('http://localhost:3000/login', {
-              method: 'POST',
-              headers: {
-                'content-type': 'application/json',
-              },
-              body: JSON.stringify(userData),
-            })
-              .then((res) => res.json)
-              .then((json) => {
-                if (json.isLogin === 'True') {
-                  props.setMode('WELCOME');
-                } else {
-                  alert(json.isLogin);
+            axios.post('http://localhost:8090/login', userData, {'content-type': 'application/json'})
+              .then((res) => {
+                console.log(res);
+                if(res.data.code === 200){
+                  alert("로그인 성공");
+                } else{
+                  alert("존재하지 않는 회원 정보입니다.");
                 }
-              });
+              })
           }}
         />
       </p>
@@ -149,26 +144,19 @@ function SigninPage(props) {
           value="Register"
           onClick={() => {
             const userData = {
-              userId: id,
-              userPassword: password,
-              userPassword2: password2,
+              "userID": id,
+              "userPassword": password,
+              "userEmail": name
             };
-            fetch('http://localhost:3000/signin', {
-              method: 'POST',
-              headers: {
-                'content-type': 'application/json',
-              },
-              body: JSON.stringify(userData),
-            })
-              .then((res) => res.json())
-              .then((json) => {
-                if (json.isSuccess === 'True') {
-                  alert('회원가입이 완료되었습니다!');
-                  props.setMode('LOGIN');
-                } else {
-                  alert(json.isSuccess);
+            axios.post('http://localhost:8090/join', userData, {'content-type': 'application/json'})
+              .then((res) => {
+                console.log(res);
+                if(res.data.code === 200){
+                  alert('회원가입 완료');
+                } else{
+                  alert('회원가입 실패');
                 }
-              });
+              })
           }}
         />
       </p>
