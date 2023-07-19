@@ -1,14 +1,15 @@
 import React, { useState, useRef } from "react";
-import "./Evaluation.css";
+import "./Edit.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as farFaStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as fasFaStar } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 /* 변수값 저장*/
-const Evaluation = () => {
+const Edit = () => {
   const idRef = useRef();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const initialCourseState = {
     id: idRef.current,
@@ -21,7 +22,7 @@ const Evaluation = () => {
     evaluate_title: "",
     evaluate_content: "",
   };
-  const [course, setCourse] = useState(initialCourseState);
+  const [course, setCourse] = useState({ ...location.state });
 
   /* 변수값 넘기기*/
   const handleSubmit = (event) => {
@@ -31,25 +32,9 @@ const Evaluation = () => {
         ...course,
       },
     });
-    idRef.current += 1;
     setCourse(initialCourseState);
-    /* 만약에 백엔드로 넘기는 코드를 짠다면 
-    fetch('http://localhost:3000/Evaluate', {
-              method: 'POST',
-              headers: {
-                'content-type': 'application/json',
-              },
-              body: JSON.stringify(...course),
-            })
-              .then((res) => res.json())
-              .then((json) => {
-                if (json.isSuccess === 'True') {
-                  alert('등록되었습니다!');
-                  props.setMode('Create');
-                } else {
-                  alert(json.isSuccess);
-                }
-              });*/
+    /* form data 넘겨야함*/
+    // 백엔드 request api 필요.
   };
 
   /* 입력에 대한 변화 저장*/
@@ -241,4 +226,4 @@ const Evaluation = () => {
   );
 };
 
-export default Evaluation;
+export default Edit;
